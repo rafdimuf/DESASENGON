@@ -71,10 +71,11 @@ const navigationMenu: NavItem[] = [
     title: 'Persuratan',
     icon: FileText,
     subItems: [
-      { title: 'Buat Surat', href: '/persuratan/buat', icon: FilePlus },
+      { title: 'Ajukan Surat Online', href: '/surat/ajukan', icon: FilePlus },
+      { title: 'Preview Surat', href: '/surat/preview', icon: FileText },
+      { title: 'Riwayat Pengajuan', href: '/surat/riwayat', icon: History },
       { title: 'Surat Masuk', href: '/persuratan/masuk' },
       { title: 'Surat Keluar', href: '/persuratan/keluar' },
-      { title: 'Draft Surat', href: '/persuratan/draft' },
       { title: 'Menunggu Persetujuan', href: '/persuratan/persetujuan', icon: FileCheck },
       { title: 'Arsip Surat', href: '/persuratan/arsip', icon: Archive },
     ],
@@ -113,7 +114,7 @@ export function Sidebar({ isOpenMobile, onCloseMobile }: SidebarProps) {
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
     'Data Penduduk': pathname.startsWith('/penduduk') || pathname.startsWith('/kartu-keluarga'),
     'Wilayah': pathname.startsWith('/wilayah'),
-    'Persuratan': pathname.startsWith('/persuratan'),
+    'Persuratan': pathname.startsWith('/persuratan') || pathname.startsWith('/surat'),
     'Statistik': pathname.startsWith('/statistik'),
     'Pengaturan': pathname.startsWith('/pengaturan'),
   });
